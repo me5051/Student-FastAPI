@@ -1,0 +1,53 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1>Student Manager</h1>
+    <p id="status" role="status">Create an account or log in.</p>
+
+    <section class="panel">
+      <h2>Register</h2>
+      <form id="register-form">
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password (8+ characters)" minlength="8" required>
+        <input name="admin_code" placeholder="Admin code (optional)">
+        <button>Create account</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Log in</h2>
+      <form id="login-form">
+        <input name="email" type="email" placeholder="Email" required>
+        <input name="password" type="password" placeholder="Password" required>
+        <button>Log in</button>
+      </form>
+      <button id="logout" type="button">Log out</button>
+    </section>
+
+    <section class="panel" id="admin-panel" hidden>
+      <h2>Add a student (admin)</h2>
+      <form id="student-form">
+        <input name="name" placeholder="Full name" required minlength="2">
+        <input name="email" type="email" placeholder="Student email" required>
+        <input name="course" placeholder="Course or class" required>
+        <button>Add student</button>
+      </form>
+    </section>
+
+    <section class="panel">
+      <h2>Students</h2>
+      <button id="refresh" type="button">Load students</button>
+      <ul id="student-list"></ul>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
